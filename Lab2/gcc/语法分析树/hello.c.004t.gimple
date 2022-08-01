@@ -1,0 +1,12 @@
+main ()
+{
+  int D.2250;
+
+  {
+    __builtin_puts (&"Hello,world!"[0]);
+  }
+  D.2250 = 0;
+  return D.2250;
+}
+
+

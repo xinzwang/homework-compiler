@@ -1,0 +1,38 @@
+
+;; Function main (main, funcdef_no=0, decl_uid=2247, cgraph_uid=0, symbol_order=0)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 18 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 18 3 19 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "hello.c":3 57 {*pushdi2_rex64}
+     (nil))
+(insn/f 19 18 20 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "hello.c":3 81 {*movdi_internal}
+     (nil))
+(note 20 19 2 2 NOTE_INSN_PROLOGUE_END)
+(note 2 20 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f5065473cf0 *.LC0>)) "hello.c":4 81 {*movdi_internal}
+     (nil))
+(call_insn 6 5 7 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f50653c9600 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "hello.c":4 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 7 6 15 2 (set (reg:SI 0 ax [orig:87 _3 ] [87])
+        (const_int 0 [0])) "<built-in>":0 82 {*movsi_internal}
+     (nil))
+(insn 15 7 21 2 (use (reg/i:SI 0 ax)) "hello.c":5 -1
+     (nil))
+(note 21 15 22 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 22 21 23 2 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0  S8 A8])) "hello.c":5 67 {*popdi1}
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 23 22 24 2 (simple_return) "hello.c":5 689 {simple_return_internal}
+     (nil)
+ -> simple_return)
+(barrier 24 23 17)
+(note 17 24 0 NOTE_INSN_DELETED)
